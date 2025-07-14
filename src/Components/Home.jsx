@@ -15,10 +15,16 @@ function Home() {
         { name: 'Education', image: 'src/assets/Education.png' },
         { name: 'Logistics', image: 'src/assets/Logistics.png' },
         { name: 'E-commerce', image: 'src/assets/E-commerce.png' },
-        { name:'Ai/ML', image: 'src/assets/Ai,Ml.png' },
+        { name: 'Ai/ML', image: 'src/assets/Ai,Ml.png' },
 
+    ];
+
+    const portfolio = [
+        { name: 'AI Chatbot', image: 'src/assets/Ai chatbot.jpg' },
+        { name: 'E-commerce Web', image: 'src/assets/E-commerce web.jpg' },
+        { name: 'Fintech', image: 'src/assets/Fintech.jpg' },
+        { name: 'LMS', image: 'src/assets/LMS.jpg' },
     ]
-
     return (
         <>
             {/* Hero Section */}
@@ -41,7 +47,7 @@ function Home() {
             </div>
 
             {/* Our Services */}
-            
+
             <div className="flex flex-col items-center mt-10">
                 <h1 className="text-4xl font-bold">Our Services</h1>
                 <p className="text-2xl mt-4">End-to-end development tailored to your business needs</p>
@@ -108,41 +114,72 @@ function Home() {
                 </div>
             </div>
 
-{/* Industries Section */}
+            {/* Industries Section */}
 
-<div className="bg-[#f7f7f7] py-16 px-4">
-  <div className="max-w-6xl mx-auto text-center">
-    <h2 className="text-4xl font-bold mb-4">Industries We Serve</h2>
-    <p className="text-gray-600 mb-10 text-lg">
-      Transforming businesses across a wide range of sectors with tailored digital solutions.
-    </p>
+            <div className="bg-[#f7f7f7] py-16 px-4">
+                <div className="max-w-6xl mx-auto text-center">
+                    <h2 className="text-4xl font-bold mb-4">Industries We Serve</h2>
+                    <p className="text-gray-600 mb-10 text-lg">
+                        Transforming businesses across a wide range of sectors with tailored digital solutions.
+                    </p>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {industries.map((industry, index) => (
-        <motion.div
-          key={index}
-          className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center"
-          whileHover={{ y: -10, scale: 1.05 }}
-          transition={{ type: 'spring', stiffness: 200 }}
-        >
-          <img
-            src={industry.image}
-            alt={industry.name}
-            className="w-16 h-16 mb-4"
-          />
-          <h3 className="text-xl font-semibold text-gray-800">{industry.name}</h3>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {industries.map((industry, index) => (
+                            <motion.div
+                                key={index}
+                                className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center"
+                                whileHover={{ y: -10, scale: 1.05 }}
+                                transition={{ type: 'spring', stiffness: 200 }}
+                            >
+                                <img
+                                    src={industry.image}
+                                    alt={industry.name}
+                                    className="w-16 h-16 mb-4"
+                                />
+                                <h3 className="text-xl font-semibold text-gray-800">{industry.name}</h3>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </div>
 
-<div>
-    <div>
-        Our Portfolio
-    </div>
-    
-</div>
+            <div>
+
+                <div className='text-center text-4xl font-bold px-5 py-5 mt-10'>
+                    Our Portfolio
+                </div>
+                <div className='grid grid-cols-2 grid-rows-1  gap-6 p-10 rounded-2xl bg-[#f7f7f7] mx-auto mt-10'>
+
+                    {portfolio.map((item, index) => (
+                        <motion.div
+                            key={index}
+                            className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 h-[500px] w-[700px]"
+                            whileHover={{ y: -10, scale: 1.05 }}
+                        >
+                            <img src={item.image} alt={item.name} className="w-full h-96 object-cover rounded-md mb-2" />
+                            <h3 className="text-lg font-semibold">{item.name}</h3>
+                        </motion.div>
+                    ))}
+                </div>
+
+            </div>
+            {/* About Us */}
+            <div className="bg-[#f7f7f7] py-16 px-4">
+                <div className='px-10 py-10 rounded-2xl bg-white mx-auto mt-10 h-[600px] w-[800px]'>
+                    <div >
+                        <h1 className="text-center text-4xl font-bold mb-4">About Us</h1>
+                        <p className="text-center text-lg text-gray-600 mb-8">
+                            We are a team of passionate developers, designers, and strategists dedicated to delivering exceptional digital solutions. Our mission is to empower businesses with innovative technology that drives growth and enhances user experiences.
+                        </p>
+
+                    </div>
+                    <div className='flex flex-cols gap-4 justify-center items-center'>
+                        <h1 className="text-center text-xl font-bold mb-4 border-r-2 border-amber-600  ">Our Mission <img src='src/assets/mission.png' alt='mission' /></h1>
+                        <h1 className='text-center text-xl font-bold mb-4  border-r-2 border-amber-600'> Active client <img src='src/assets/active client.png' alt='active client' /></h1>
+                        <h1 className='text-center text-xl font-bold mb-4  border-r-2 border-amber-600'>rewards <img src='src/assets/rewards.png' alt='rewards' /></h1>
+                    </div>
+                </div>
+            </div>
         </>
     );
 }
